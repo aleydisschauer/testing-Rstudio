@@ -9,6 +9,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
+Text added
+
 ```{r cars}
 summary(cars)
 ```
