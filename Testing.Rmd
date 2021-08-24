@@ -1,26 +1,28 @@
 ---
-title: "Testing"
+title: "Example Assignment"
+date: "23/08/2021"
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
 ```
 
-## R Markdown
+## The Data
 
-Text added
+The `cars`dataset references the speed and stopping distances of cars in the 1920s.
 
-```{r cars}
-summary(cars)
+*Source: `{datasets}`*
+
+```{r scatterplot}
+data("cars")
+
+cars |> ggplot() + 
+  geom_point(aes(x=dist, y=speed)) + 
+  theme_minimal() +
+  labs(title = "Speed vs Stopping Distance",
+       x = "Stopping Distance (ft)",
+       y = "Speed (MPH)")
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
